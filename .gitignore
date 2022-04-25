@@ -7,4 +7,7 @@
 
 !.config/alacritty
 !.config/alacritty/alacritty.yml
+
+!.config/rustfmt
+!.config/rustfmt/rustfmt.toml
 ################################################################################
