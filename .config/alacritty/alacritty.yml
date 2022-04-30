@@ -11,34 +11,32 @@ font:
 live_config_reload: true
 
 colors:
+  # Default colors
   primary:
-    background: '#292d3e'
-    foreground: '#959dcb'
-    bright_foreground: '#d0d0d0'
+    background: "0x3c4542"
+    foreground: "0xfdd89a"
 
-  cursor:
-    text: '#292d3e'
-    cursor: '#959dcb'
-
+  # Normal colors
   normal:
-    black: '#292d3e'
-    red: '#f07178'
-    green: '#c3e88d'
-    yellow: '#ffcb6b'
-    blue: '#82aaff'
-    magenta: '#c792ea'
-    cyan: '#89ddff'
-    white: '#d0d0d0'
+    black: "0x7e837c"
+    red: "0xfc796b"
+    green: "0xa8cb79"
+    yellow: "0xed9c6a"
+    blue: "0xbcbfb4"
+    magenta: "0xd8bbbd"
+    cyan: "0xa8cb79"
+    white: "0xfdd89a"
 
+  # Bright colors
   bright:
-    black: '#434758'
-    red: '#ff8b92'
-    green: '#ddffa7'
-    yellow: '#ffe585'
-    blue: '#9cc4ff'
-    magenta: '#e1acff'
-    cyan: '#a3f7ff'
-    white: '#ffffff'
+    black: "0x7e837c"
+    red: "0xfc796b"
+    green: "0xa8cb79"
+    yellow: "0xedc074"
+    blue: "0xbcbfb4"
+    magenta: "0xd8bbbd"
+    cyan: "0xa8cb79"
+    white: "0xfdd89a"
 
 cursor:
   style:
