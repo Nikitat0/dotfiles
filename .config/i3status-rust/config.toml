@@ -1,0 +1,81 @@
+[theme]
+name = "dracula"
+[theme.overrides]
+separator = ""
+
+[icons]
+name = "material-nf"
+
+[[block]]
+block = "music"
+max_width = 30
+[block.format]
+full = "{combo}"
+short = ""
+[block.theme_overrides]
+info_bg = "#50fa7b"
+info_fg = "#282a36"
+
+[[block]]
+block = "cpu"
+info = 50
+warning = 50
+critical = 90
+interval = 1
+[block.format]
+full = "{utilization} {barchart}"
+short = "{utilization}"
+[block.theme_overrides]
+idle_bg = "#8be9fd"
+idle_fg = "#282a36"
+
+[[block]]
+block = "memory"
+format_mem = "{mem_used_percents}"
+clickable = false
+warning_mem = 67
+critical_mem = 95
+interval = 1
+[block.theme_overrides]
+idle_bg = "#8be9fd"
+idle_fg = "#282a36"
+
+[[block]]
+block = "disk_space"
+path = "/home"
+format = "{icon} {percentage}"
+info_type = "used"
+warning = 80
+alert = 95
+
+[[block]]
+block = "net"
+format = "{ssid} {speed_down;K*b} {speed_up;K*b}"
+interval = 1
+
+[[block]]
+block = "sound"
+show_volume_when_muted = true
+headphones_indicator = true
+[block.theme_overrides]
+idle_bg = "#50fa7b"
+idle_fg = "#282a36"
+warning_bg = "#282a36"
+warning_fg = "#f8f8f2"
+
+[[block]]
+block = "keyboard_layout"
+driver = "xkbswitch"
+on_click = "xkb-switch -n"
+format = "{layout}"
+interval = 1
+
+[[block]]
+block = "time"
+format = " %a %d.%m.%y  %R"
+interval = 1
+[block.format]
+full = " %a %d.%m.%y  %R"
+short = " %d.%m  %R"
+[block.icons_overrides]
+time = ""
