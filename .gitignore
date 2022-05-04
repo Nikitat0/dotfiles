@@ -1,15 +1,1 @@
 *
-
-# .config
-################################################################################
-!.config
-.config/*
-
-!.config/alacritty
-!.config/alacritty/alacritty.yml
-
-!.config/rustfmt
-!.config/rustfmt/rustfmt.toml
-################################################################################
-
-!.p10k.zsh
