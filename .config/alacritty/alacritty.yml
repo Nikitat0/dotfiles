@@ -42,3 +42,6 @@ cursor:
   style:
     shape: Block
   unfocused_hollow: true
+
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
