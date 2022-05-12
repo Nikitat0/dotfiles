@@ -1,0 +1,144 @@
+# settings
+set $mod Mod4
+floating_modifier $mod
+focus_on_window_activation focus
+
+# windows settings
+for_window [all] border pixel 2
+
+for_window [class="floating"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [title="Event Tester"] floating enable
+
+# font
+font pango:JetBrainsMono Nerd Font 10
+
+# colors
+client.unfocused #f07178 #222222 #888888 #292d2e #284B3E
+client.focused #4c7899 #285577 #ffffff #2e9ef4 #4DA307
+
+# workspaces
+set $ws1 "1:Ⅰ"
+set $ws2 "2:Ⅱ"
+set $ws3 "3:Ⅲ"
+set $ws4 "4:Ⅳ"
+set $ws5 "5:Ⅴ"
+set $ws6 "6:Ⅵ"
+set $ws7 "7:Ⅶ"
+set $ws8 "8:Ⅷ"
+set $ws9 "9:Ⅸ"
+set $ws10 "10:Ⅹ"
+
+# moving
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+bindsym $mod+t focus mode_toggle
+
+# layout
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+
+bindsym $mod+v split vertical
+bindsym $mod+Shift+v split horizontal
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+t floating toggle
+
+# i3 management
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# window management
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+Escape exec --no-startup-id wmctrl -c :ACTIVE:
+bindsym $mod+Shift+Escape kill
+
+# audio control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+Shift+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# runners
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec "alacritty --class=Alacritty,floating"
+
+bindsym $mod+F1 exec alacritty --command ranger
+bindsym $mod+F2 exec google-chrome-stable
+
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i'
+
+# bar
+bar {
+    status_command i3status-rs
+    strip_workspace_numbers yes
+}
+
+# rc
+exec setxkbmap -option grp:win_space_toggle,caps:ctrl_modifier,compose:ralt
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -k --nofork
