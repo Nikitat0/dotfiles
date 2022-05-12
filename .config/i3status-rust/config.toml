@@ -1,7 +1,10 @@
 [theme]
-name = "dracula"
+name = "native"
 [theme.overrides]
-separator = ""
+info_fg = "#44D0FE"
+good_fg = "#4DA241"
+warning_fg = "#FCD63B"
+critical_fg = "#E9672D"
 
 [icons]
 name = "material-nf"
@@ -12,9 +15,6 @@ max_width = 30
 [block.format]
 full = "{combo}"
 short = ""
-[block.theme_overrides]
-info_bg = "#50fa7b"
-info_fg = "#282a36"
 
 [[block]]
 block = "cpu"
@@ -25,9 +25,6 @@ interval = 1
 [block.format]
 full = "{utilization} {barchart}"
 short = "{utilization}"
-[block.theme_overrides]
-idle_bg = "#8be9fd"
-idle_fg = "#282a36"
 
 [[block]]
 block = "memory"
@@ -36,9 +33,6 @@ clickable = false
 warning_mem = 67
 critical_mem = 95
 interval = 1
-[block.theme_overrides]
-idle_bg = "#8be9fd"
-idle_fg = "#282a36"
 
 [[block]]
 block = "disk_space"
@@ -57,11 +51,6 @@ interval = 1
 block = "sound"
 show_volume_when_muted = true
 headphones_indicator = true
-[block.theme_overrides]
-idle_bg = "#50fa7b"
-idle_fg = "#282a36"
-warning_bg = "#282a36"
-warning_fg = "#f8f8f2"
 
 [[block]]
 block = "keyboard_layout"

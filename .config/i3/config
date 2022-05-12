@@ -136,6 +136,18 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i'
 bar {
     status_command i3status-rs
     strip_workspace_numbers yes
+
+    font pango:JetBrainsMono Nerd Font 11
+
+    colors {
+        background #422329
+        statusline #f3e5ab
+        separator #f3e5ab
+
+        focused_workspace #2F8F3F #2F8F3F #f3e5ab
+        active_workspace #234228 #234228 #f3e5ab
+        binding_mode #422329 #551C1A #f3e5ab
+    }
 }
 
 # rc
