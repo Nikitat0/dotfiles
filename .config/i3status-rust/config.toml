@@ -53,6 +53,11 @@ show_volume_when_muted = true
 headphones_indicator = true
 
 [[block]]
+block = "sound"
+device_kind = "source"
+show_volume_when_muted = true
+
+[[block]]
 block = "keyboard_layout"
 driver = "xkbswitch"
 on_click = "xkb-switch -n"
