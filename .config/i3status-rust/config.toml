@@ -73,3 +73,9 @@ full = " %a %d.%m.%y  %R"
 short = " %d.%m  %R"
 [block.icons_overrides]
 time = ""
+
+[[block]]
+block = "battery"
+if_command = "test -e /sys/class/power_supply/BAT*"
+hide_missing = true
+interval = 1
