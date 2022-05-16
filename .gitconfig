@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = nikitatzero@yandex.ru
+	name = Nikitat0
+[core]
+	editor = nvim
