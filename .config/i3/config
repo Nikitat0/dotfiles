@@ -141,6 +141,8 @@ bindsym $mod+Shift+plus exec --no-startup-id \
 pactl set-source-volume @DEFAULT_SOURCE@ +10% && $refresh_i3status
 bindsym $mod+Shift+underscore exec --no-startup-id \
 pactl set-source-volume @DEFAULT_SOURCE@ -10% && $refresh_i3status
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10
 
 # runners
 bindsym $mod+Return exec --no-startup-id alacritty
