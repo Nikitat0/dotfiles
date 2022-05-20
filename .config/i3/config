@@ -145,9 +145,10 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10
 
 # runners
+set $run_floating_term "alacritty --class=Alacritty,floating"
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+Shift+Return exec --no-startup-id \
-"alacritty --class=Alacritty,floating"
+bindsym $mod+Shift+Return exec --no-startup-id $run_floating_term
+bindsym $mod+c exec --no-startup-id $run_floating_term
 
 bindsym $mod+F1 exec --no-startup-id alacritty --command ranger
 bindsym $mod+F2 exec google-chrome-stable
