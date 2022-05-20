@@ -88,6 +88,9 @@ bindsym $mod+Shift+v split horizontal
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+t floating toggle
 
+bindsym $mod+p scratchpad show
+bindsym $mod+Shift+p move to scratchpad
+
 # i3 management
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
