@@ -1,0 +1,4 @@
+[plugins]
+
+[plugins.oh-my-zsh]
+github = 'ohmyzsh/ohmyzsh'
