@@ -1,0 +1,51 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+format = "$all$fill$line_break$username$hostname$character"
+right_format = "$status $cmd_duration"
+
+[username]
+format = "[$user]($style)"
+
+[hostname]
+format = "[@$hostname]($style)"
+style = "bold yellow"
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+vicmd_symbol = "[|](bold yellow)"
+
+[status]
+disabled = false
+format = "[$common_meaning $signal_name$status]($style)"
+pipestatus = true
+pipestatus_format = "\\[$pipestatus \\]"
+
+[directory]
+format = """
+[$read_only]($read_only_style)\
+[$before_root_path]($style)\
+[$repo_root]($repo_root_style)\
+[$path]($style) \
+"""
+style = "bold blue"
+repo_root_style = "bold green"
+truncation_symbol = ".../"
+truncate_to_repo = false
+
+[fill]
+symbol = "·"
+style = "none"
+
+[git_metrics]
+disabled = false
+
+[git_status]
+disabled = true
+
+[package]
+disabled = true
+
+[rust]
+symbol = " "
