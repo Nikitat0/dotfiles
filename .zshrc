@@ -22,6 +22,8 @@ alias q="exit"
 alias quit="exit"
 alias e="exec"
 
+alias dotfiles="git --work-tree=$HOME --git-dir=$HOME/.dotfiles"
+
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then
         /usr/bin/ranger "$@"
