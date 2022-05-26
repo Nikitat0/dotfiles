@@ -94,7 +94,6 @@ bindsym $mod+Shift+p move to scratchpad
 # i3 management
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # window management
 bindsym $mod+r mode "resize"
@@ -117,6 +116,14 @@ mode "resize" {
 
 bindsym $mod+Escape exec --no-startup-id wmctrl -c :ACTIVE:
 bindsym $mod+Shift+Escape kill
+
+# power management 
+bindsym $mod+Shift+e exec --no-startup-id \
+"alacritty --class=Alacritty,floating --command python3 ~/.config/i3/exit.py e"
+bindsym XF86PowerOff exec --no-startup-id \
+"alacritty --class=Alacritty,floating --command python3 ~/.config/i3/exit.py p"
+bindsym XF86Sleep exec --no-startup-id \
+"alacritty --class=Alacritty,floating --command python3 ~/.config/i3/exit.py s"
 
 # audio control
 set $raiseVolume pactl set-sink-volume @DEFAULT_SINK@ +10%
