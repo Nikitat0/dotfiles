@@ -1,7 +1,3 @@
-export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
-
-eval "$(sheldon source)"
-
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
@@ -14,10 +10,6 @@ plugins=(
     rust
     vi-mode
 )
-
-source $ZSH/oh-my-zsh.sh
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias clr="clear"
 alias q="exit"
@@ -34,4 +26,5 @@ ranger() {
     fi
 }
 
+eval "$(sheldon source)"
 eval "$(starship init zsh)"
