@@ -6,7 +6,6 @@ focus_on_window_activation focus
 # windows settings
 for_window [all] border pixel 2
 
-for_window [class="floating"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [title="Event Tester"] floating enable
@@ -117,14 +116,6 @@ mode "resize" {
 bindsym $mod+Escape exec --no-startup-id wmctrl -c :ACTIVE:
 bindsym $mod+Shift+Escape kill
 
-# power management 
-bindsym $mod+Shift+e exec --no-startup-id \
-"alacritty --class=Alacritty,floating --command python3 ~/.config/i3/exit.py e"
-bindsym XF86PowerOff exec --no-startup-id \
-"alacritty --class=Alacritty,floating --command python3 ~/.config/i3/exit.py p"
-bindsym XF86Sleep exec --no-startup-id \
-"alacritty --class=Alacritty,floating --command python3 ~/.config/i3/exit.py s"
-
 # audio control
 set $raiseVolume pactl set-sink-volume @DEFAULT_SINK@ +10%
 set $lowerVolume pactl set-sink-volume @DEFAULT_SINK@ -10%
@@ -155,14 +146,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10
 
 # runners
-set $run_floating_term "alacritty --class=Alacritty,floating"
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+Shift+Return exec --no-startup-id $run_floating_term
-bindsym $mod+c exec --no-startup-id $run_floating_term
-
-bindsym $mod+F1 exec --no-startup-id alacritty --command ranger
-bindsym $mod+F2 exec xdg-open http://
-
+bindsym $mod+Return exec wezterm
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i'
 
 # screenshot
@@ -190,3 +174,5 @@ bar {
 exec --no-startup-id setxkbmap -option grp:win_space_toggle,caps:ctrl_modifier,compose:ralt
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -k --nofork
+
+exec --no-startup-id fcitx -d
