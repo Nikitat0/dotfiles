@@ -10,6 +10,8 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [title="Event Tester"] floating enable
 
+smart_borders on
+
 # font
 font pango:JetBrainsMono Nerd Font 10
 
@@ -169,17 +171,16 @@ bar {
     status_command i3status-rs
     strip_workspace_numbers yes
 
-    font pango:JetBrainsMono Nerd Font 11
+    font pango:JetBrainsMono Nerd Font 12
 
-    colors {
-        background #422329
-        statusline #f3e5ab
-        separator #f3e5ab
+    mode hide
+    modifier $mod
 
-        focused_workspace #2F8F3F #2F8F3F #f3e5ab
-        active_workspace #234228 #234228 #f3e5ab
-        binding_mode #422329 #551C1A #f3e5ab
-    }
+    position top
+    tray_output primary
+
+    height 30
+    workspace_min_width 30
 }
 
 # rc

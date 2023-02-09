@@ -1,20 +1,39 @@
 [theme]
-name = "native"
-[theme.overrides]
-info_fg = "#44D0FE"
-good_fg = "#4DA241"
-warning_fg = "#FCD63B"
-critical_fg = "#E9672D"
+name = "plain"
 
 [icons]
 name = "material-nf"
 
 [[block]]
-block = "music"
-max_width = 30
+block = "keyboard_layout"
+driver = "xkbswitch"
+on_click = "xkb-switch -n"
+format = "{layout}"
+interval = 1
+
+[[block]]
+block = "time"
+interval = 1
+format = "%R"
+
+[[block]]
+block = "time"
+interval = 1
 [block.format]
-full = "{combo}"
-short = ""
+full = "%a %d.%m.%y"
+short = "%d.%m"
+[block.icons_overrides]
+time = ""
+
+[[block]]
+block = "sound"
+show_volume_when_muted = true
+headphones_indicator = true
+
+[[block]]
+block = "sound"
+device_kind = "source"
+show_volume_when_muted = true
 
 [[block]]
 block = "cpu"
@@ -35,44 +54,9 @@ critical_mem = 95
 interval = 1
 
 [[block]]
-block = "disk_space"
-path = "/home"
-format = "{icon} {percentage}"
-info_type = "used"
-warning = 80
-alert = 95
-
-[[block]]
 block = "net"
 format = "{ssid} {speed_down;K*b} {speed_up;K*b}"
 interval = 1
-
-[[block]]
-block = "sound"
-show_volume_when_muted = true
-headphones_indicator = true
-
-[[block]]
-block = "sound"
-device_kind = "source"
-show_volume_when_muted = true
-
-[[block]]
-block = "keyboard_layout"
-driver = "xkbswitch"
-on_click = "xkb-switch -n"
-format = "{layout}"
-interval = 1
-
-[[block]]
-block = "time"
-format = " %a %d.%m.%y  %R"
-interval = 1
-[block.format]
-full = " %a %d.%m.%y  %R"
-short = " %d.%m  %R"
-[block.icons_overrides]
-time = ""
 
 [[block]]
 block = "battery"
