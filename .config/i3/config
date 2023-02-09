@@ -183,9 +183,10 @@ bar {
     workspace_min_width 30
 }
 
-# rc
-exec --no-startup-id setxkbmap -option grp:win_space_toggle,caps:ctrl_modifier,compose:ralt
+# autostart
+set $scripts ~/.config/scripts
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -k --nofork
-
-exec --no-startup-id fcitx -d
+exec --no-startup-id dunst
+exec --no-startup-id $scripts/screen_locker
+exec --no-startup-id $scripts/setup_keyboard
+exec --no-startup-id $scripts/wallpaper

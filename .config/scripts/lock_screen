@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+font="JetBrainsMono Nerd Font"
+textcolor=ffffffff
+invisiblecolor=00000000
+
+i3lock \
+    --color 000000ff \
+    --radius 150 \
+    --ring-width 15 \
+    --line-uses-ring \
+    --inside-color $invisiblecolor \
+    --insidever-color $invisiblecolor \
+    --insidewrong-color $invisiblecolor \
+    --time-str "%R" \
+    --time-pos "ix:iy" \
+    --time-font "$font" \
+    --time-size 72 \
+    --time-color $textcolor \
+    --date-str "%a %d.%m.%y" \
+    --date-font "$font" \
+    --date-size 20 \
+    --date-color $textcolor \
+    --keylayout 1 \
+    --layout-pos "20:h-20" \
+    --layout-align 1 \
+    --layout-font "$font" \
+    --layout-color $textcolor \
+    --pass-media-keys \
+    --pass-power-keys \
+    --pass-volume-keys \
+    --pass-screen-keys \
+    --clock --force-clock

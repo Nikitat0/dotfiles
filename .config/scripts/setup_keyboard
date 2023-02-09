@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+setxkbmap -option grp:win_space_toggle,caps:ctrl_modifier,compose:ralt
