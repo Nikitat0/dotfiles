@@ -18,16 +18,20 @@ client.unfocused #f07178 #222222 #888888 #292d2e #284B3E
 client.focused #4c7899 #285577 #ffffff #2e9ef4 #4DA307
 
 # workspaces
-set $ws1 "1:Ⅰ"
-set $ws2 "2:Ⅱ"
-set $ws3 "3:Ⅲ"
-set $ws4 "4:Ⅳ"
-set $ws5 "5:Ⅴ"
-set $ws6 "6:Ⅵ"
-set $ws7 "7:Ⅶ"
-set $ws8 "8:Ⅷ"
-set $ws9 "9:Ⅸ"
-set $ws10 "10:Ⅹ"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws11 "11:F1"
+set $ws12 "12:F2"
+set $ws13 "13:F3"
+set $ws14 "14:F4"
 
 # moving
 bindsym $mod+h focus left
@@ -41,6 +45,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 bindsym $mod+1 workspace $ws1
+bindsym $mod+F1 workspace $ws11
+bindsym $mod+F2 workspace $ws12
+bindsym $mod+F3 workspace $ws13
+bindsym $mod+F4 workspace $ws14
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
@@ -76,6 +84,10 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+F1 move container to workspace $ws11
+bindsym $mod+Shift+F2 move container to workspace $ws12
+bindsym $mod+Shift+F3 move container to workspace $ws13
+bindsym $mod+Shift+F4 move container to workspace $ws14
 
 bindsym $mod+e layout toggle split
 bindsym $mod+s layout stacking
