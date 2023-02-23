@@ -1,29 +1,29 @@
 [theme]
-name = "plain"
+theme = "plain"
 
 [icons]
-name = "material-nf"
+icons = "material-nf"
 
 [[block]]
-block = "keyboard_layout"
-driver = "xkbswitch"
-on_click = "xkb-switch -n"
-format = "{layout}"
+block = "custom"
+command = "xkb-switch -p"
 interval = 1
+[[block.click]]
+button = "left"
+cmd = "xkb-switch -n"
+update = true
 
 [[block]]
 block = "time"
 interval = 1
-format = "%R"
+format = " $timestamp.datetime(f:'%R') "
 
 [[block]]
 block = "time"
 interval = 1
 [block.format]
-full = "%a %d.%m.%y"
-short = "%d.%m"
-[block.icons_overrides]
-time = ""
+full = " $timestamp.datetime(f:'%a %d.%m.%y') "
+short = " $timestamp.datetime(f:'%d.%m') "
 
 [[block]]
 block = "sound"
@@ -37,29 +37,26 @@ show_volume_when_muted = true
 
 [[block]]
 block = "cpu"
-info = 50
-warning = 50
-critical = 90
 interval = 1
 [block.format]
-full = "{utilization} {barchart}"
-short = "{utilization}"
+full = " $utilization $barchart "
+short = " $utilization "
 
 [[block]]
 block = "memory"
-format_mem = "{mem_used_percents}"
-clickable = false
 warning_mem = 67
 critical_mem = 95
 interval = 1
+format = " $mem_used/$mem_total ($mem_used_percents) "
 
 [[block]]
 block = "net"
-format = "{ssid} {speed_down;K*b} {speed_up;K*b}"
+format = " {^icon_net_wireless $ssid |}$speed_down.eng(prefix:K) ^icon_net_down $speed_up.eng(prefix:K) ^icon_net_up "
+missing_format = ""
 interval = 1
 
 [[block]]
 block = "battery"
-if_command = "test -e /sys/class/power_supply/BAT*"
-hide_missing = true
+device = "BAT"
 interval = 1
+missing_format = ""
