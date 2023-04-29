@@ -1,3 +1,7 @@
+# additions
+bindsym XF86PowerOff exec --no-startup-id $scripts/power_manager
+bindsym $mod+Shift+q exec --no-startup-id $scripts/power_manager
+
 # settings
 set $mod Mod4
 floating_modifier $mod

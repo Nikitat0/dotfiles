@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+
+if [ -z "$ROFI_RETV" ]
+then
+  rofi -show power -modes "power:~/.config/scripts/power_manager"
+fi
+
+if [ x"$@" = x"Lock" ]
+then
+  loginctl lock-session
+  exit
+fi
+
+if [ x"$@" = x"Poweroff" ]
+then
+  poweroff
+  exit
+fi
+
+if [ x"$@" = x"Reboot" ]
+then
+  reboot
+  exit
+fi
+
+if [ x"$@" = x"Sleep" ]
+then
+  systemctl suspend
+  exit
+fi
+
+echo "Lock"
+echo "Poweroff"
+echo "Reboot"
+echo "Sleep"
