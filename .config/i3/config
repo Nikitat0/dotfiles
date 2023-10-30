@@ -200,5 +200,6 @@ set $scripts ~/.config/scripts
 
 exec --no-startup-id dunst
 exec --no-startup-id $scripts/screen_locker
-exec --no-startup-id $scripts/setup_keyboard
 exec --no-startup-id $scripts/wallpaper
+
+ exec_always --no-startup-id $scripts/setup_keyboard
